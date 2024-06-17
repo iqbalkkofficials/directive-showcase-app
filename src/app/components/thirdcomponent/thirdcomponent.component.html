@@ -1,18 +1,43 @@
-<div class="container">
-    <h5>This is demonstration for Angular form with Email Validator</h5>
-    <div>
-        <form #emailForm="ngForm" class="row">
-            <div class="col-md-8">
-                <mat-form-field appearance="outline">
-                    <mat-label>Email</mat-label>
-                    <input matInput name="email" ngModel appEmailValidation required placeholder="Enter the your email">
-                    <mat-error *ngIf="emailForm.controls['email']?.errors?.['invalidEmail']">Invalid email
-                        format</mat-error>
-                    <mat-error *ngIf="emailForm.controls['email']?.errors?.['required']">Email is required</mat-error>
-                </mat-form-field>
-                <button mat-raised-button [disabled]="!emailForm.valid">Submit</button>
-            </div>
-        </form>
-    </div>
+<h5>This is demonstration for Angular form with Email & Phone Number validator Directive</h5>
 
+<div class="example-container">
+    <form class="example-container" #userForm="ngForm">
+        <table>
+            <tr>
+                <td>
+                    <mat-form-field [hideRequiredMarker]="false" [floatLabel]="'auto'">
+                        <input matInput name="firstname" ngModel required placeholder="Enter your first name" required>
+                        <mat-error *ngIf="userForm.controls['firstname']?.errors?.['required']">Firstname is
+                            required</mat-error>
+                    </mat-form-field>
+                </td>
+                <td>
+                    <mat-form-field [hideRequiredMarker]="false" [floatLabel]="'auto'">
+                        <input matInput name="lastname" ngModel required placeholder="Enter your lastname" required>
+                        <mat-error *ngIf="userForm.controls['lastname']?.errors?.['required']">Lastname is
+                            required</mat-error>
+                    </mat-form-field>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <mat-form-field [hideRequiredMarker]="true" [floatLabel]="'auto'">
+                        <input matInput name="email" ngModel appEmailValidation required
+                            placeholder="Enter your mail id" required>
+                        <mat-error *ngIf="userForm.controls['email']?.errors?.['required']">Email is
+                            required</mat-error>
+                    </mat-form-field>
+                </td>
+                <td>
+                    <mat-form-field [hideRequiredMarker]="true" [floatLabel]="'auto'">
+                        <input matInput name="phone" ngModel appPhoneNumberValidator required
+                            placeholder="Enter your phone" required>
+                        <mat-error *ngIf="userForm.controls['phone']?.errors?.['invalidPhoneNumber']">Invalid phone
+                            number format</mat-error>
+                    </mat-form-field>
+                </td>
+            </tr>
+        </table>
+        <button mat-raised-button color="primary">Submit</button>
+    </form>
 </div>

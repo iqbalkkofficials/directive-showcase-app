@@ -16,6 +16,7 @@ import { SecondcomponentComponent } from './components/secondcomponent/secondcom
 import { ThirdcomponentComponent } from './components/thirdcomponent/thirdcomponent.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { EmailValidationDirective } from './directives/email-validation.directive';
+import { PhoneNumberValidatorDirective } from './directives/phonenumber-validator.directive';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { EmailValidationDirective } from './directives/email-validation.directiv
     DraggableDirective,
     SecondcomponentComponent,
     ThirdcomponentComponent,
-    EmailValidationDirective
+    EmailValidationDirective,
+    PhoneNumberValidatorDirective
   ],
   imports: [
     BrowserModule,
