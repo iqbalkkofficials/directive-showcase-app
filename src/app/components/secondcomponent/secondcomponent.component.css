@@ -1,6 +1,13 @@
+.container {
+    padding: 50px;
+
+    div{
+        padding: 15px;
+    }
+}
 .draggable-box {
-    width: 200px;
-    height: 100px;
+    width: 120px;
+    height: 120px;
     background-color: #34db4d;
     color: white;
     display: flex;

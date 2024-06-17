@@ -1,0 +1,18 @@
+<div class="container">
+    <h5>This is demonstration for Angular form with Email Validator</h5>
+    <div>
+        <form #emailForm="ngForm" class="row">
+            <div class="col-md-8">
+                <mat-form-field appearance="outline">
+                    <mat-label>Email</mat-label>
+                    <input matInput name="email" ngModel appEmailValidation required placeholder="Enter the your email">
+                    <mat-error *ngIf="emailForm.controls['email']?.errors?.['invalidEmail']">Invalid email
+                        format</mat-error>
+                    <mat-error *ngIf="emailForm.controls['email']?.errors?.['required']">Email is required</mat-error>
+                </mat-form-field>
+                <button mat-raised-button [disabled]="!emailForm.valid">Submit</button>
+            </div>
+        </form>
+    </div>
+
+</div>
