@@ -1,0 +1,10 @@
+.draggable-box {
+    width: 200px;
+    height: 100px;
+    background-color: #34db4d;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+  }
